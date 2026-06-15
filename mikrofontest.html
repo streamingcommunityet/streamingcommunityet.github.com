@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mikrofon Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+
+    <a href="index.html" class="nav-link">Forside</a>
+
+    <div class="dropdown">
+        <span class="dropbtn">Guider ▾</span>
+        <div class="dropdown-content">
+            <a href="100-foelgere.html">Første 100 Følgere</a>
+            <a href="thumbnails.html">Thumbnails</a>
+            <a href="stream-setup.html">Stream Setup</a>
+            <a href="obs-guide.html">OBS Guide</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span class="dropbtn">Værktøjer ▾</span>
+        <div class="dropdown-content">
+            <a href="streamnavn.html">Streamnavn Generator</a>
+            <a href="contentideer.html">Content Idéer</a>
+            <a href="bitrate-kalkulator.html">Bitrate Kalkulator</a>
+            <a href="mikrofontest.html">Mikrofon Test</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span class="dropbtn">Anbefalinger ▾</span>
+        <div class="dropdown-content">
+            <a href="webcams.html">Webcams</a>
+            <a href="mikrofoner.html">Mikrofoner</a>
+        </div>
+    </div>
+
+    <a href="admin.html" class="nav-link">Admin</a>
+
+</nav>
+
+<section class="hero">
+    <h1>🎤 Mikrofon Test</h1>
+    <p>Test din mikrofon direkte i browseren</p>
+
+    <button class="btn" onclick="startTest()">Start test</button>
+
+    <audio id="audio" controls style="margin-top:20px; display:none;"></audio>
+</section>
+
+<script>
+let recorder;
+let chunks = [];
+
+async function startTest(){
+    const stream = await navigator.mediaDevices.getUserMedia({ audio:true });
+
+    recorder = new MediaRecorder(stream);
+    chunks = [];
+
+    recorder.ondataavailable = e => chunks.push(e.data);
+
+    recorder.onstop = () => {
+        const blob = new Blob(chunks, { type:"audio/webm" });
+        const url = URL.createObjectURL(blob);
+
+        const audio = document.getElementById("audio");
+        audio.src = url;
+        audio.style.display = "block";
+    };
+
+    recorder.start();
+
+    setTimeout(() => recorder.stop(), 4000);
+}
+</script>
+
+</body>
+</html>
