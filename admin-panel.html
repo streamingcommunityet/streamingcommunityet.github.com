@@ -110,5 +110,25 @@
 
 </section>
 
+<div id="fullscreen">
+    <img id="fullscreen-img">
+</div>
+
+<script>
+const fullscreen = document.getElementById("fullscreen");
+const fullscreenImg = document.getElementById("fullscreen-img");
+
+document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+        fullscreenImg.src = img.src;
+        fullscreen.style.display = "flex";
+    });
+});
+
+fullscreen.addEventListener("click", () => {
+    fullscreen.style.display = "none";
+});
+</script>
+
 </body>
 </html>
