@@ -1,67 +1,80 @@
+```html
 <!DOCTYPE html>
-<html lang="da">
+<html lang=
+"da">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Streaming Academy</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
     background:#0f172a;
     color:white;
+    line-height:1.7;
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+header{
+    background:linear-gradient(135deg,#7c3aed,#4338ca);
+    padding:80px 20px;
     text-align:center;
-    padding:20px;
 }
 
-.hero h1{
-    font-size:3rem;
+header h1{
+    font-size:3.5rem;
     margin-bottom:20px;
 }
 
-.hero p{
-    max-width:700px;
-    line-height:1.6;
-    color:#cbd5e1;
+header p{
+    max-width:800px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 25px;
+}
+
+h2{
+    margin-bottom:20px;
+    color:#a78bfa;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:30px;
 }
 
 .btn{
-    margin-top:30px;
-    padding:15px 30px;
     background:#7c3aed;
     color:white;
     border:none;
+    padding:15px 30px;
     border-radius:8px;
     cursor:pointer;
     font-size:1rem;
+    margin-top:25px;
 }
 
 .btn:hover{
     background:#6d28d9;
 }
 
-.hidden-button{
-    position:fixed;
-    right:0;
-    bottom:0;
-    width:10px;
-    height:10px;
-    opacity:0;
-    cursor:default;
+.error{
+    margin-top:15px;
+    color:#ff6b6b;
 }
 
 .page{
@@ -71,17 +84,17 @@ body{
 }
 
 .login-box{
-    max-width:400px;
+    max-width:450px;
     margin:100px auto;
     text-align:center;
 }
 
 input{
     width:100%;
-    padding:12px;
-    margin-top:15px;
+    padding:14px;
     border:none;
     border-radius:8px;
+    margin-top:15px;
 }
 
 .gallery{
@@ -93,155 +106,279 @@ input{
 
 .gallery img{
     width:100%;
-    border-radius:10px;
+    border-radius:12px;
 }
 
-.error{
-    color:#ff6b6b;
-    margin-top:15px;
+.footer{
+    position:relative;
+    padding:80px 20px;
+    text-align:center;
+    color:#94a3b8;
 }
 
-.success{
-    color:#4ade80;
-    margin-top:15px;
+.secret-button{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:12px;
+    height:12px;
+    opacity:0;
+    cursor:default;
 }
+
+ul{
+    margin-left:20px;
+}
+
 </style>
 </head>
 <body>
 
-<!-- Forside -->
-<div id="homePage" class="hero">
-    <h1>Streaming Academy</h1>
+<div id="homePage">
 
-    <p>
-        Lær hvordan du kommer i gang med streaming på Twitch,
-        YouTube og Kick. Få tips til udstyr, software,
-        overlays og opbygning af dit community.
-    </p>
+<header>
+<h1>Streaming Academy</h1>
 
-    <button class="btn" onclick="communityError()">
-        Join Streaming Community Nu
-    </button>
+<p>
+Lær hvordan du bliver streamer, opbygger et publikum,
+forbedrer din kvalitet og skaber engagerende indhold.
+Denne guide samler de vigtigste råd til både begyndere
+og erfarne streamere.
+</p>
 
-    <p id="communityMessage" class="error"></p>
+<button class="btn" onclick="communityError()">
+Join Streaming Community Nu
+</button>
+
+<p id="communityMessage" class="error"></p>
+
+</header>
+
+<section>
+
+<div class="card">
+<h2>Hvad er livestreaming?</h2>
+
+<p>
+Livestreaming gør det muligt at sende video direkte til seere i realtid.
+Mange bruger streaming til gaming, musik, undervisning,
+podcasts, interviews, sport og kreative projekter.
+Platforme som Twitch, YouTube og Kick gør det muligt at
+opbygge et fællesskab omkring sit indhold.
+</p>
 </div>
 
-<!-- Hemmelig knap -->
-<div class="hidden-button" onclick="openAdminPage()"></div>
+<div class="card">
+<h2>Udstyr til streaming</h2>
 
-<!-- Skjult admin side -->
+<p>
+Det vigtigste udstyr er en stabil computer, en god mikrofon,
+et webcam og en pålidelig internetforbindelse.
+Lydkvalitet er ofte vigtigere end videokvalitet for nye streamere.
+Mange starter med simpelt udstyr og opgraderer senere.
+</p>
+
+<ul>
+<li>USB mikrofon</li>
+<li>Webcam eller kamera</li>
+<li>Hovedtelefoner</li>
+<li>God internetforbindelse</li>
+<li>Lys til ansigt og baggrund</li>
+</ul>
+
+</div>
+
+<div class="card">
+<h2>Software</h2>
+
+<p>
+OBS Studio er blandt de mest populære programmer til streaming.
+Det giver mulighed for at oprette scener, overlays,
+kameraopsætninger og skærmoptagelse.
+Mange professionelle streamere bruger OBS som grundlag
+for deres produktion.
+</p>
+</div>
+
+<div class="card">
+<h2>Opbygning af et community</h2>
+
+<p>
+Et stærkt community skabes gennem regelmæssige streams,
+aktiv chat, sociale medier og ved at skabe værdi for seerne.
+Det tager ofte måneder eller år at opbygge et loyalt publikum.
+Konsistens er en af de vigtigste faktorer for vækst.
+</p>
+</div>
+
+<div class="card">
+<h2>Streaming Tips</h2>
+
+<ul>
+<li>Stream på faste tidspunkter.</li>
+<li>Tal selv når chatten er stille.</li>
+<li>Brug klare titler og beskrivelser.</li>
+<li>Interagér med nye seere.</li>
+<li>Optimer lyd før video.</li>
+<li>Hold en stabil uploadhastighed.</li>
+<li>Lav indhold du selv synes er interessant.</li>
+<li>Analyser statistik efter hver stream.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Ofte stillede spørgsmål</h2>
+
+<p>
+Hvor ofte bør man streame?
+Mange anbefaler 2-5 gange om ugen i starten.
+Hvor hurtigt vokser en kanal?
+Det varierer meget og afhænger af indhold,
+konsistens og målgruppe.
+Kan man streame gratis?
+Ja, mange starter helt gratis med OBS Studio.
+</p>
+</div>
+
+<div class="card">
+<h2>Avancerede teknikker</h2>
+
+<p>
+Efterhånden som en kanal vokser, kan man arbejde med
+custom overlays, automatisering, chatbots,
+alarmer, scene-skift, kameraopsætninger og analyser.
+Professionelle streamere investerer ofte betydelig tid
+i at forbedre brugeroplevelsen for deres seere.
+</p>
+</div>
+
+</section>
+
+<div class="footer">
+
+<p>
+© 2026 Streaming Academy. Alle rettigheder forbeholdes.
+</p>
+
+<div class="secret-button" onclick="openAdminPage()"></div>
+
+</div>
+
+</div>
+
+<!-- ADMIN SIDE -->
+
 <div id="adminPage" class="page">
 
-    <div class="hero" style="min-height:auto;">
-        <h1>Streaming Partner Portal</h1>
+<header>
+<h1>Streaming Partner Portal</h1>
 
-        <p>
-            Administratorer og samarbejdspartnere kan
-            logge ind her for at administrere streaming-
-            relateret indhold.
-        </p>
-    </div>
+<p>
+Administratorer og partnere kan få adgang til
+interne værktøjer og ressourcer her.
+</p>
+</header>
 
-    <div class="login-box">
-        <h2>Admin Login</h2>
+<div class="login-box">
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Adgangskode">
+<h2>Admin Login</h2>
 
-        <button class="btn" onclick="checkPassword()">
-            Log Ind
-        </button>
+<input
+type="password"
+id="password"
+placeholder="Indtast adgangskode">
 
-        <p id="loginMessage"></p>
-    </div>
+<button class="btn" onclick="checkPassword()">
+Log ind
+</button>
+
+<p id="loginMessage"></p>
 
 </div>
 
-<!-- Galleri -->
+</div>
+
+<!-- GALLERI -->
+
 <div id="galleryPage" class="page">
 
-    <h1>Billedgalleri</h1>
+<h1>Galleri</h1>
 
-    <p>Private billeder.</p>
+<p>Private billeder.</p>
 
-    <div class="gallery" id="gallery"></div>
+<div class="gallery" id="gallery"></div>
 
 </div>
 
 <script>
 
 function communityError(){
-    document.getElementById("communityMessage").innerText =
-        "Fejl: Community-systemet er midlertidigt utilgængeligt.";
+document.getElementById("communityMessage").innerText =
+"Fejl: Community-systemet er midlertidigt utilgængeligt. Prøv igen senere.";
 }
 
 function openAdminPage(){
-    document.getElementById("homePage").style.display = "none";
-    document.getElementById("adminPage").style.display = "block";
+document.getElementById("homePage").style.display="none";
+document.getElementById("adminPage").style.display="block";
 }
 
 function checkPassword(){
 
-    const password =
-        document.getElementById("password").value;
+const password =
+document.getElementById("password").value;
 
-    if(password === "NøglensKvarter117"){
+if(password==="NøglensKvarter117"){
 
-        document.getElementById("adminPage").style.display = "none";
-        document.getElementById("galleryPage").style.display = "block";
+document.getElementById("adminPage").style.display="none";
+document.getElementById("galleryPage").style.display="block";
 
-    }else{
+}else{
 
-        document.getElementById("loginMessage").innerHTML =
-            '<span class="error">Forkert kode.</span>';
+document.getElementById("loginMessage").innerHTML =
+'<span style="color:#ff6b6b;">Forkert kode.</span>';
 
-    }
+}
+
 }
 
 /*
-======================================
+====================================
+
 INDSÆT DINE BILLEDER HER
-======================================
 
 Eksempel:
 
 const images = [
-    "billede1.jpg",
-    "billede2.png",
-    "ferie.jpg"
+"billede1.jpg",
+"billede2.jpg",
+"ferie.png"
 ];
 
-Billederne skal ligge i samme mappe
-som index.html eller du kan skrive
-en sti som:
-
-"images/billede1.jpg"
-
-======================================
+====================================
 */
 
 const images = [
-    "billede1.jpg",
-    "billede2.jpg",
-    "billede3.jpg"
+"billede1.jpg",
+"billede2.jpg",
+"billede3.jpg"
 ];
 
 const gallery =
-    document.getElementById("gallery");
+document.getElementById("gallery");
 
 images.forEach(src => {
 
-    const img =
-        document.createElement("img");
+const img =
+document.createElement("img");
 
-    img.src = src;
+img.src = src;
 
-    gallery.appendChild(img);
+gallery.appendChild(img);
+
 });
 
 </script>
 
 </body>
 </html>
+```
