@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitrate Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Streaming Academy</div>
+
+```
+<nav>
+    <a href="index.html">Forside</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Guider ▼</button>
+        <div class="dropdown-content">
+            <a href="100-foelgere.html">Første 100 Følgere</a>
+            <a href="thumbnails.html">Thumbnails</a>
+            <a href="stream-setup.html">Stream Setup</a>
+            <a href="obs-guide.html">OBS Guide</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Værktøjer ▼</button>
+        <div class="dropdown-content">
+            <a href="streamnavn.html">Streamnavn Generator</a>
+            <a href="contentideer.html">Content Idéer</a>
+            <a href="bitrate-kalkulator.html">Bitrate Kalkulator</a>
+            <a href="mikrofontest.html">Mikrofon Test</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Anbefalinger ▼</button>
+        <div class="dropdown-content">
+            <a href="webcams.html">Webcams</a>
+            <a href="mikrofoner.html">Mikrofoner</a>
+        </div>
+    </div>
+</nav>
+```
+
+</header>
+
+<section class="hero">
+    <h1>Bitrate Kalkulator</h1>
+    <p>Find den bedste bitrate til din upload-hastighed.</p>
+
+```
+<input type="number" id="upload" placeholder="Upload hastighed (Mbps)" style="padding:10px; margin-top:20px; width:250px;">
+
+<br>
+
+<button class="btn" onclick="calcBitrate()">Beregn</button>
+
+<h2 id="result" style="margin-top:30px;"></h2>
+```
+
+</section>
+
+<script>
+function calcBitrate(){
+    const upload = document.getElementById("upload").value;
+
+    if(!upload){
+        document.getElementById("result").innerText = "Indtast din upload hastighed";
+        return;
+    }
+
+    // ca. 70% af upload til streaming
+    const bitrate = Math.floor(upload * 1000 * 0.7);
+
+    document.getElementById("result").innerText =
+        "Anbefalet bitrate: " + bitrate + " kbps";
+}
+</script>
+
+<footer>
+    <p>© 2026 Streaming Academy</p>
+</footer>
+
+</body>
+</html>

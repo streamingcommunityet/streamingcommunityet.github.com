@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamnavn Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Streaming Academy</div>
+
+```
+<nav>
+    <a href="index.html">Forside</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Guider ▼</button>
+        <div class="dropdown-content">
+            <a href="100-foelgere.html">Første 100 Følgere</a>
+            <a href="thumbnails.html">Thumbnails</a>
+            <a href="stream-setup.html">Stream Setup</a>
+            <a href="obs-guide.html">OBS Guide</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Værktøjer ▼</button>
+        <div class="dropdown-content">
+            <a href="streamnavn.html">Streamnavn Generator</a>
+            <a href="contentideer.html">Content Idéer</a>
+            <a href="bitrate-kalkulator.html">Bitrate Kalkulator</a>
+            <a href="mikrofontest.html">Mikrofon Test</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Anbefalinger ▼</button>
+        <div class="dropdown-content">
+            <a href="webcams.html">Webcams</a>
+            <a href="mikrofoner.html">Mikrofoner</a>
+        </div>
+    </div>
+</nav>
+```
+
+</header>
+
+<section class="hero">
+    <h1>Streamnavn Generator</h1>
+    <p>Find et fedt navn til din stream med ét klik.</p>
+
+```
+<button class="btn" onclick="generateName()">Generér navn</button>
+
+<h2 id="name" style="margin-top:30px;"></h2>
+```
+
+</section>
+
+<script>
+const names = [
+    "ShadowStream",
+    "PixelKing",
+    "NightNova",
+    "FrostByte",
+    "StreamLegend",
+    "AlphaCaster",
+    "NovaPlays",
+    "ZeroLagTV",
+    "EchoGaming",
+    "CyberWolf"
+];
+
+function generateName(){
+    const random = names[Math.floor(Math.random() * names.length)];
+    document.getElementById("name").innerText = random;
+}
+</script>
+
+<footer>
+    <p>© 2026 Streaming Academy</p>
+</footer>
+
+</body>
+</html>

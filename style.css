@@ -1,0 +1,154 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#111827;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+font-size:1.5rem;
+font-weight:bold;
+color:#a78bfa;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.dropdown{
+position:relative;
+}
+
+.dropbtn{
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+font-size:1rem;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#1e293b;
+min-width:220px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.dropdown-content a{
+display:block;
+padding:12px;
+color:white;
+text-decoration:none;
+}
+
+.dropdown-content a:hover
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:1.2rem;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:#7c3aed;
+color:white;
+text-decoration:none;
+border-radius:10px;
+transition:.3s;
+box-shadow:0 0 15px rgba(124,58,237,.6);
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(124,58,237,1);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding:50px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+color:#a78bfa;
+margin-bottom:15px;
+}
+
+.admin-section{
+text-align:center;
+padding:120px 20px;
+}
+
+.admin-section h2{
+margin-bottom:20px;
+color:#a78bfa;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#94a3b8;
+}
